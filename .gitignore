@@ -1,0 +1,43 @@
+# See https://help.github.com/ignore-files/ for more about ignoring files.
+
+#匹配模式前加 / 代表项目根目录
+#匹配模式最后加 / 代表目录
+#匹配模式前加 ！代表取反
+# * 代表任意字符
+# ? 匹配任意一个字符
+# ** 匹配多级目录
+
+# dependencies
+/node_modules
+
+# testing
+/coverage
+
+# production
+/dist
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json*
+
+
+#mongodb
+/db
+
+#webstrom
+/.idea
+
+#vscode
+/.vscode
+
+
+#config
+/config/config.js

@@ -11,11 +11,11 @@ const ora = require('ora'); // 下载过程久的话，可以用于显示下载�
 const chalk = require('chalk'); // 可以给终端的字体设置样式。
 
 
-program.version('1.0.0', '-v, --version')
+program.version('1.0.3', '-v, --version')
     .command('init <name>')
     .action((name) => {
         if(fs.existsSync(name)){ //判断目录是否存在
-            console.log(chalk.red(`✖ <${name}> 目录已存在，请勿重复创建！`));
+            console.log(chalk.red(`✖ <${name}> already exists. Do not create it again!`));
             return
         }
         inquirer.prompt([
@@ -38,7 +38,7 @@ program.version('1.0.0', '-v, --version')
         ]).then((answers) => {
             const spinner = ora('Downloading template...');
             spinner.start();
-            download('github:xzblog/react-template#master', name, {clone: true}, (err) => {
+            download('direct:https://github.com/xzblog/react-template.git', name, {clone: true}, (err) => {
                 if(err){
                     spinner.fail();
                     console.log(chalk.red(err));
@@ -57,7 +57,7 @@ program.version('1.0.0', '-v, --version')
                 const content = fs.readFileSync(fileName).toString();
                 const result = handlebars.compile(content)(meta);
                 fs.writeFileSync(fileName, result);
-                console.log(chalk.green(`✨ Success! Created ${name} at ${path.join(__dirname, '')}`));
+                console.log(chalk.green(`✨ ${name} Created Successfully!`));
 
                 console.log();
                 console.log('-------------------------------------------------------');

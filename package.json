@@ -1,6 +1,6 @@
 {
   "name": "yogoo-cli",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "react单页应用脚手架",
   "bin": {
     "yogoo": "index.js"
@@ -10,7 +10,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "webpack"
+    "React",
+    "脚手架"
   ],
   "author": "Miracle",
   "license": "MIT",
